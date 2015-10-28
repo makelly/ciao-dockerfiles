@@ -1,0 +1,23 @@
+# Docker container for ciao-activemq
+# Version 0.4
+FROM ubuntu:14.04
+MAINTAINER HSCIC
+RUN apt-get update
+RUN apt-get install -y openjdk-7-jdk unzip wget
+# Get ActiveMQ
+RUN wget http://mirrors.ukfast.co.uk/sites/ftp.apache.org/activemq/5.11.1/apache-activemq-5.11.1-bin.tar.gz
+# Extract the files from the gzip file to /opt/apache-activemq-5.11.1
+RUN tar zxvf apache-activemq-5.11.1-bin.tar.gz -C /opt
+# Move /opt/apache-activemq-5.11.1 to /opt/activemq
+RUN mv /opt/apache-activemq-5.11.1 /opt/activemq
+# Configuration folder
+VOLUME ["/opt/activemq/conf/"]
+# Data folder
+VOLUME ["/opt/activemq/data/"]
+# Standard ActiveMQ Web console listen port
+EXPOSE 8161
+# Standard ActiveMQ TCP listen port
+EXPOSE 61616
+# ActiveMQ Replication port
+EXPOSE 61614
+ENTRYPOINT ["bin/bash", "-c", "/opt/activemq/bin/activemq console"]
