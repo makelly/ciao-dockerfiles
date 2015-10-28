@@ -11,9 +11,9 @@ RUN tar zxvf apache-activemq-5.11.1-bin.tar.gz -C /opt
 # Move /opt/apache-activemq-5.11.1 to /opt/activemq
 RUN mv /opt/apache-activemq-5.11.1 /opt/activemq
 # Configuration folder
-VOLUME ["/opt/activemq/conf/"]
+VOLUME ["/opt/activemq/conf"]
 # Data folder
-VOLUME ["/opt/activemq/data/"]
+VOLUME ["/opt/activemq/data"]
 # Standard ActiveMQ Web console listen port
 EXPOSE 8161
 # Standard ActiveMQ TCP listen port
