@@ -19,5 +19,5 @@ EXPOSE 8161
 # Standard ActiveMQ TCP listen port
 EXPOSE 61616
 # ActiveMQ Replication port
-EXPOSE 61614
+EXPOSE 61619
 ENTRYPOINT ["bin/bash", "-c", "/opt/activemq/bin/activemq console"]
