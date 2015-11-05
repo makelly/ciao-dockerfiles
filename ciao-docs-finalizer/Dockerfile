@@ -1,5 +1,5 @@
 # Docker container for ciao-docs-finalizer CIP
-# Version 0.2
+# Version 0.3
 FROM ubuntu:14.04
 MAINTAINER HSCIC
 RUN apt-get update
@@ -10,6 +10,8 @@ RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-docs-finalizer/ws/ta
 RUN unzip ciao-docs-finalizer-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-docs-finalizer
 # Jolokia Agent port
 EXPOSE 8778
+# Hazelcast Server port
+EXPOSE 5701
 # Standard ciao configuration file folder
 VOLUME ["/root/.ciao/"]
 # Entry point
