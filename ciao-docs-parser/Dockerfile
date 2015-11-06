@@ -18,5 +18,7 @@ VOLUME ["/opt/ciao-docs-parser/error/"]
 VOLUME ["/opt/ciao-docs-parser/in-progress/"]
 # Jolokia Agent port
 Expose 8778
+# Hazelcast port
+Expose 5701
 # Entry point
 ENTRYPOINT ["/opt/ciao-docs-parser/ciao-docs-parser-1.0.0-SNAPSHOT/run.sh"]
