@@ -1,5 +1,5 @@
 # Docker container for ciao-docs-enricher CIP
-# Version 0.6
+# Version 0.7
 FROM ubuntu:14.04
 MAINTAINER HSCIC
 RUN apt-get update
@@ -9,9 +9,11 @@ RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-docs-enricher/ws/cia
 # Unzip into /opt/ciao-docs-enricher
 RUN unzip ciao-docs-enricher-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-docs-enricher
 # Standard ciao configuration file folder
-VOLUME ["/root/.ciao/"]
+VOLUME ["/root/.ciao"]
 # Static JSON folder
-VOLUME ["/opt/ciao-docs-enricher/json/"]
+VOLUME ["/opt/ciao-docs-enricher/json"]
+# In-progress folder
+/opt/ciao-docs-enricher/in-progress"}
 # Jolokia Agent port
 EXPOSE 8778
 # Entry point

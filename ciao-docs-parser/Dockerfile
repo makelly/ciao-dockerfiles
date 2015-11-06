@@ -9,13 +9,13 @@ RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-docs-parser/ws/ciao-
 # Unzip into /opt/ciao-docs-parser
 RUN unzip ciao-docs-parser-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-docs-parser
 # Standard ciao configuration file folder
-VOLUME ["/root/.ciao/"]
+VOLUME ["/root/.ciao"]
 # Input file folder
-VOLUME ["/opt/ciao-docs-parser/input/"]
+VOLUME ["/opt/ciao-docs-parser/input"]
 # Error file folder
-VOLUME ["/opt/ciao-docs-parser/error/"]
+VOLUME ["/opt/ciao-docs-parser/error"]
 # In-progress file folder
-VOLUME ["/opt/ciao-docs-parser/in-progress/"]
+VOLUME ["/opt/ciao-docs-parser/in-progress"]
 # Jolokia Agent port
 Expose 8778
 # Hazelcast port
