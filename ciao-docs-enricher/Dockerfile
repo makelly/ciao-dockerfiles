@@ -13,7 +13,7 @@ VOLUME ["/root/.ciao"]
 # Static JSON folder
 VOLUME ["/opt/ciao-docs-enricher/json"]
 # In-progress folder
-/opt/ciao-docs-enricher/in-progress"}
+VOLUME ["/opt/ciao-docs-enricher/in-progress"]
 # Jolokia Agent port
 EXPOSE 8778
 # Entry point

@@ -1,5 +1,5 @@
 # Docker container for ciao-cda-builder CIP
-# Version 0.5
+# Version 0.6
 FROM ubuntu:14.04
 MAINTAINER HSCIC
 RUN apt-get update
@@ -9,10 +9,10 @@ RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-cda-builder/ws/targe
 # Unzip into /opt/ciao-cda-builder
 RUN unzip ciao-cda-builder-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-cda-builder
 # Standard ciao configuration file folder
-VOLUME ["/root/.ciao/"]
+VOLUME ["/root/.ciao"]
+# In-progress folder
+VOLUME ["/opt/ciao-cda-builder/in-progress"]
 # Jolokia Agent port
 EXPOSE 8778
-# Hazelcast Server port
-EXPOSE 5701
 # Entry point
 ENTRYPOINT ["/opt/ciao-cda-builder/ciao-cda-builder-1.0.0-SNAPSHOT/run.sh"]
