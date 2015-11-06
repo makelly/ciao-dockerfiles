@@ -1,5 +1,5 @@
 # Docker container for ciao-docs-parser CIP
-# Version 0.8
+# Version 0.9
 FROM ubuntu:14.04
 MAINTAINER HSCIC
 RUN apt-get update
@@ -12,8 +12,6 @@ RUN unzip ciao-docs-parser-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-docs-parser
 VOLUME ["/root/.ciao/"]
 # Input file folder
 VOLUME ["/opt/ciao-docs-parser/input/"]
-# Completed file folder
-VOLUME ["/opt/ciao-docs-parser/completed/"]
 # Error file folder
 VOLUME ["/opt/ciao-docs-parser/error/"]
 # In-progress file folder
