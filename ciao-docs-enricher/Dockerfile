@@ -8,6 +8,8 @@ RUN apt-get install -y openjdk-7-jdk wget unzip
 RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-docs-enricher/ws/ciao-docs-enricher/target/ciao-docs-enricher-1.0.0-SNAPSHOT-bin.zip
 # Unzip into /opt/ciao-docs-enricher
 RUN unzip ciao-docs-enricher-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-docs-enricher
+# Copy log4j.properties file into config folder
+COPY log4j.properties /opt/ciao-docs-enricher/ciao-docs-enricher-1.0.0-SNAPSHOT/config
 # Standard ciao configuration file folder
 VOLUME ["/root/.ciao"]
 # Static JSON folder

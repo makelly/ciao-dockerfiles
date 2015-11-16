@@ -8,6 +8,8 @@ RUN apt-get install -y openjdk-7-jdk wget unzip
 RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-cda-builder/ws/target/ciao-cda-builder-1.0.0-SNAPSHOT-bin.zip
 # Unzip into /opt/ciao-cda-builder
 RUN unzip ciao-cda-builder-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-cda-builder
+# Copy log4j.properties file into config folder
+COPY log4j.properties /opt/ciao-cda-builder/ciao-cda-builder-1.0.0-SNAPSHOT/config
 # Standard ciao configuration file folder
 VOLUME ["/root/.ciao"]
 # In-progress folder
