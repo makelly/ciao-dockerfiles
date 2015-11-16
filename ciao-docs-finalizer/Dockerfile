@@ -8,6 +8,8 @@ RUN apt-get install -y openjdk-7-jdk wget unzip
 RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-docs-finalizer/ws/target/ciao-docs-finalizer-1.0.0-SNAPSHOT-bin.zip
 # Unzip into /opt/ciao-docs-finalizer
 RUN unzip ciao-docs-finalizer-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-docs-finalizer
+# Copy log4j.properties file into config folder
+COPY log4j.properties /opt/ciao-docs-finalizer/ciao-docs-finalizer-1.0.0-SNAPSHOT/config
 # Standard ciao configuration file folder
 VOLUME ["/root/.ciao"]
 # In-progress file folder
