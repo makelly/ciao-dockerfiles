@@ -15,9 +15,9 @@ VOLUME ["/root/.ciao"]
 # In-progress file folder
 VOLUME ["/opt/ciao-docs-finalizer/in-progress"]
 # Error file folder
-VOLUME ["/opt/ciao-docs-parser/error"]
+VOLUME ["/opt/ciao-docs-finalizer/error"]
 # Completed file folder
-VOLUME ["/opt/ciao-docs-parser/completed"]
+VOLUME ["/opt/ciao-docs-finalizer/completed"]
 # Jolokia Agent port
 EXPOSE 8778
 # Hazelcast Server port
