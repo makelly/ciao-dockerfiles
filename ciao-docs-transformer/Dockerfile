@@ -5,7 +5,7 @@ MAINTAINER HSCIC
 RUN apt-get update
 RUN apt-get install -y openjdk-7-jdk wget unzip
 # Get ciao-docs-transformer zipped binary
-RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-docs-transformer/ws/ciao-docs-transformer/target/ciao-docs-transformer-1.0.0-SNAPSHOT-bin.zip
+RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-docs-transformer/ws/target/ciao-docs-transformer-1.0.0-SNAPSHOT-bin.zip
 # Unzip into /opt/ciao-docs-transformer
 RUN unzip ciao-docs-transformer-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-docs-transformer
 # Copy log4j.properties file into config folder
