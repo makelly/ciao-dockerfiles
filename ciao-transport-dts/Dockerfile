@@ -5,7 +5,7 @@ MAINTAINER HSCIC
 RUN apt-get update
 RUN apt-get install -y openjdk-7-jdk wget unzip
 # Get ciao-transport-spine zipped binary
-RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-transport-dts/ws/target/ciao-transport-dts-1.0.0-SNAPSHOT-bin.zip
+RUN wget http://hcdn-build1.cloudapp.net/view/CIAO/job/ciao-transport-dts/ws/ciao-transport-dts/target/ciao-transport-dts-1.0.0-SNAPSHOT-bin.zip
 # Unzip into /opt/ciao-transport-dts
 RUN unzip ciao-transport-dts-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-transport-dts
 # Copy log4j.properties file into config folder
