@@ -1,5 +1,5 @@
 # Docker container for ciao-transport-dts CIP
-# Version 0.3
+# Version 0.4
 FROM ubuntu:14.04
 MAINTAINER HSCIC
 RUN apt-get update
@@ -12,7 +12,15 @@ RUN unzip ciao-transport-dts-1.0.0-SNAPSHOT-bin.zip -d /opt/ciao-transport-dts
 COPY log4j.properties /opt/ciao-transport-dts/ciao-transport-dts-1.0.0-SNAPSHOT/config
 # Jolokia Agent port
 EXPOSE 8778
+# Hazelcast Server port
+EXPOSE 5703
 # Standard ciao configuration file folder
 VOLUME ["/root/.ciao/"]
+# In-progress file folder
+VOLUME ["/opt/ciao-transport-dts/in-progress"]
+# DTS folder
+VOLUME ["/opt/dts"]
+# Ciao folder
+VOLUME ["/opt/ciao-transport-dts"]
 # Entry point
 ENTRYPOINT ["/opt/ciao-transport-dts/ciao-transport-dts-1.0.0-SNAPSHOT/run.sh"]

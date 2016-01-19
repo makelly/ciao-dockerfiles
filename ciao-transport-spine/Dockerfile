@@ -1,5 +1,5 @@
 # Docker container for ciao-transport-spine CIP
-# Version 0.5
+# Version 0.6
 FROM ubuntu:14.04
 MAINTAINER HSCIC
 RUN apt-get update
@@ -14,9 +14,13 @@ COPY log4j.properties /opt/ciao-transport-spine/ciao-transport-spine-1.0.0-SNAPS
 EXPOSE 8122
 # Jolokia Agent port
 EXPOSE 8778
+# Hazelcast Server port
+EXPOSE 5704
 # Standard ciao configuration file folder
 VOLUME ["/root/.ciao/"]
 # Keystores folder
 VOLUME ["/opt/keystores/"]
+# In-progress file folder
+VOLUME ["/opt/ciao-transport-spine/in-progress"]
 # Entry point
 ENTRYPOINT ["/opt/ciao-transport-spine/ciao-transport-spine-1.0.0-SNAPSHOT/run.sh"]
